@@ -1,0 +1,28 @@
+# Virtual environment
+.venv/
+
+# Secrets — never commit real keys
+.env
+
+# Logs (keep the directory via .gitkeep, not the runtime log)
+logs/trading_bot.log
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Pytest cache
+.pytest_cache/
+
+# Editor
+.vscode/
+.idea/
+*.swp

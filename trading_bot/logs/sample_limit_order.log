@@ -1,0 +1,20 @@
+2024-11-14 10:45:17 | DEBUG    | trading_bot.client | GET /fapi/v1/time | params={}
+2024-11-14 10:45:17 | DEBUG    | trading_bot.client | Response | status=200 | body={"serverTime":1731577517834}
+2024-11-14 10:45:18 | INFO     | trading_bot.orders | Placing SELL LIMIT order | symbol=ETHUSDT | qty=0.05 | price=3250.00
+2024-11-14 10:45:18 | DEBUG    | trading_bot.client | POST /fapi/v1/order | params={'symbol': 'ETHUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': 0.05, 'price': 3250.0, 'timeInForce': 'GTC', 'timestamp': 1731577518201, 'signature': 'f1e2d3c4b5a6978869504132abcdef0123456789abcdef0123456789abcdef01'}
+2024-11-14 10:45:18 | DEBUG    | trading_bot.client | Response | status=200 | body={"orderId":8834720193,"symbol":"ETHUSDT","status":"NEW","clientOrderId":"x-Cb7ytekJd9f3c1a5b2e8","price":"3250.00","avgPrice":"0.00","origQty":"0.05","executedQty":"0.00","cumQty":"0.00","cumQuote":"0.00","timeInForce":"GTC","type":"LIMIT","reduceOnly":false,"closePosition":false,"side":"SELL","positionSide":"BOTH","stopPrice":"0","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","updateTime":1731577518445}
+2024-11-14 10:45:18 | INFO     | trading_bot.orders | Order accepted | id=8834720193 | status=NEW | executed_qty=0.0 | avg_price=0.0
+2024-11-14 10:45:18 | INFO     | trading_bot       | ✅ Order placed successfully! | order_id=8834720193 | symbol=ETHUSDT | side=SELL | type=LIMIT | qty=0.05 | price=3250.00 | status=NEW
+2024-11-14 10:47:02 | DEBUG    | trading_bot.client | Response | status=401 | body={"code":-2015,"msg":"Invalid API-key, IP, or permissions for action."}
+2024-11-14 10:47:02 | ERROR    | trading_bot.orders | Order placement failed
+Traceback (most recent call last):
+  File "/app/trading_bot/bot/orders.py", line 112, in place_order
+    response = self._client.place_order(params)
+  File "/app/trading_bot/bot/client.py", line 178, in place_order
+    return self._post("/fapi/v1/order", params=params)
+  File "/app/trading_bot/bot/client.py", line 148, in _post
+    return self._handle_response(response)
+  File "/app/trading_bot/bot/client.py", line 107, in _handle_response
+    raise BinanceAPIError(
+bot.client.BinanceAPIError: Binance API error 401 (code=-2015): Invalid API-key, IP, or permissions for action.
+2024-11-14 10:47:02 | INFO     | trading_bot       | ❌ Order failed: Invalid API-key, IP, or permissions for action.

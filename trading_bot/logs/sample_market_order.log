@@ -1,0 +1,7 @@
+2024-11-14 09:12:03 | DEBUG    | trading_bot.client | GET /fapi/v1/time | params={}
+2024-11-14 09:12:03 | DEBUG    | trading_bot.client | Response | status=200 | body={"serverTime":1731572323481}
+2024-11-14 09:12:04 | INFO     | trading_bot.orders | Placing BUY MARKET order | symbol=BTCUSDT | qty=0.001 | price=N/A (MARKET)
+2024-11-14 09:12:04 | DEBUG    | trading_bot.client | POST /fapi/v1/order | params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.001, 'timestamp': 1731572324102, 'signature': 'a3f9c2e1b847d6f0e5c3a2b1d4e7f8a9b0c1d2e3f4a5b6c7d8e9f0a1b2c3d4e5'}
+2024-11-14 09:12:04 | DEBUG    | trading_bot.client | Response | status=200 | body={"orderId":4728391056,"symbol":"BTCUSDT","status":"FILLED","clientOrderId":"x-Cb7ytekJc3f9a2b1d4e7","price":"0","avgPrice":"91243.50","origQty":"0.001","executedQty":"0.001","cumQty":"0.001","cumQuote":"91.24350","timeInForce":"GTC","type":"MARKET","reduceOnly":false,"closePosition":false,"side":"BUY","positionSide":"BOTH","stopPrice":"0","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","updateTime":1731572324387}
+2024-11-14 09:12:04 | INFO     | trading_bot.orders | Order accepted | id=4728391056 | status=FILLED | executed_qty=0.001 | avg_price=91243.5
+2024-11-14 09:12:04 | INFO     | trading_bot       | ✅ Order placed successfully! | order_id=4728391056 | symbol=BTCUSDT | side=BUY | type=MARKET | qty=0.001 | avg_price=91243.50
